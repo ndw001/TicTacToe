@@ -2,34 +2,56 @@
 
 let arr = ['1LA', '1B', '1RC', '2A','2LRB', '2C', '3RA', '3B', '3LC'];
 
-document.getElementById('1LA').addEventListener("click", function(){ document.getElementById('1LA').innerHTML = '[X]';})
+let currentX = [];
+let currentO = [];
 
-document.getElementById('1B').addEventListener("click", function(){ document.getElementById('1B').innerHTML = '[X]';})
-document.getElementById('1RC').addEventListener("click", function(){ document.getElementById('1RC').innerHTML = '[X]';})
+document.getElementById('1LA').addEventListener("click", function(){
+  document.getElementById('1LA').innerHTML = '[X]';
+  currentX.push('1LA');
+})
 
-document.getElementById('2A').addEventListener("click", function(){ document.getElementById('2A').innerHTML = '[X]';})
-document.getElementById('2LRB').addEventListener("click", function(){ document.getElementById('2LRB').innerHTML = '[X]';})
-document.getElementById('2C').addEventListener("click", function(){ document.getElementById('2C').innerHTML = '[X]';})
+document.getElementById('1B').addEventListener("click", function(){
+  document.getElementById('1B').innerHTML = '[X]';
+  currentX.push('1B');
 
-document.getElementById('3RA').addEventListener("click", function(){ document.getElementById('3RA').innerHTML = '[X]';})
-document.getElementById('3B').addEventListener("click", function(){ document.getElementById('3B').innerHTML = '[X]';})
-document.getElementById('3LC').addEventListener("click", function(){ document.getElementById('3LC').innerHTML = '[X]';})
+})
+document.getElementById('1RC').addEventListener("click", function(){
+  document.getElementById('1RC').innerHTML = '[X]';
+  currentX.push('1RC');
+})
 
-// for(let i = 0; i < arr.length; i++){
-//   document.getElementById(arr[i]).addEventListener("click", function(){ document.getElementById(this.id).innerHTML = '[X]';})
-// }
+document.getElementById('2A').addEventListener("click", function(){
+  document.getElementById('2A').innerHTML = '[X]';
+  currentX.push('2A');
+})
+document.getElementById('2LRB').addEventListener("click", function(){
+  document.getElementById('2LRB').innerHTML = '[X]';
+  currentX.push('2LRB');
+})
+document.getElementById('2C').addEventListener("click", function(){
+  document.getElementById('2C').innerHTML = '[X]';
+  currentX.push('2C');
+})
 
+document.getElementById('3RA').addEventListener("click", function(){
+  document.getElementById('3RA').innerHTML = '[X]';
+  currentX.push('3RA');
+})
+document.getElementById('3B').addEventListener("click", function(){
+  document.getElementById('3B').innerHTML = '[X]';
+  currentX.push('3B');
+})
+document.getElementById('3LC').addEventListener("click", function(){
+  document.getElementById('3LC').innerHTML = '[X]';
+  currentX.push('3LC');
+})
 
-
-
-  // function click(){
-  //   console.log();
-  //   document.getElementById(event.srcElement.id).innerHTML = '[X]';
-  //   console.log("Click function")
-  // }
-
-
-
+document.getElementById('reset').addEventListener("click", function(){
+  let all = document.getElementsByClassName('board');
+  for(var k = 0; k < all.length; k++){
+    all[k].innerHTML = '[&nbsp;&nbsp;]';
+  }
+})
 
 
 // Pushing buttons
