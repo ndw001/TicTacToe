@@ -13,10 +13,11 @@
 // Reseting
 // // click on the button to reset gameboard. CANNOT refresh page
 
-let arr = ['1LA', '1B', '1RC', '2A','2LRB', '2C', '3RA', '3B', '3LC'];
+let arr = ['1LA', '1B', '1RC', '2A', '2LRB', '2C', '3RA', '3B', '3LC'];
 let positions = {};
 positions.X = {};
 positions.O = {};
+positions.all = [];
 let playerXO = ["One", "X"];
 
 let updatePositions = (string, object) => {
@@ -31,18 +32,22 @@ let updatePositions = (string, object) => {
 }
 
 let checkWinner = (player, object) => {
+  console.log('checkWinner ', player, object)
   let objKeys = Object.keys(object);
   for(let i = 0; i < objKeys.length; i++){
     if(object[objKeys[i]] === 3){
       document.getElementById('playerTurn').innerHTML = `Player ${playerXO[0]} wins!`;
+      return;
     }
   }
   if(playerXO[1] === "X"){
     playerXO = ["Two", "O"];
     document.getElementById('playerTurn').innerHTML = `It's Player ${playerXO[0]}'s turn.`;
+    console.log(positions);
   } else {
     playerXO = ["One", "X"];
     document.getElementById('playerTurn').innerHTML = `It's Player ${playerXO[0]}'s turn.`;
+    console.log(positions);
   }
 }
 
