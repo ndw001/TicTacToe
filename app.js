@@ -96,6 +96,22 @@ document.getElementById('3LC').addEventListener("click", function(){
   checkWinner(`${playerXO[0]}`, positions[`${playerXO[1]}`]);
 })
 
+document.getElementById('reset').addEventListener("click", function(){
+  let all = document.getElementsByClassName('board');
+  for(var k = 0; k < all.length; k++){
+    all[k].innerHTML = '[&nbsp;&nbsp;]';
+  }
+  positions.X = {};
+  positions.O = {};
+  playerXO = ["One", "X"];
+  document.getElementById('playerTurn').innerHTML = `It's Player ${playerXO[0]}'s turn.`;
+})
+
+
+
+
+
+
 
 
 // document.getElementById('1B').addEventListener("click", function(){
