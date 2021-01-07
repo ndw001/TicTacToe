@@ -41,6 +41,10 @@ let checkWinner = (player, object) => {
       return;
     }
   }
+  if(positions.all.length === 9){
+    document.getElementById('playerTurn').innerHTML = "It's a tie!";
+    return;
+  }
   if(playerXO[1] === "X"){
     playerXO = ["Two", "O"];
     document.getElementById('playerTurn').innerHTML = `It's Player ${playerXO[0]}'s turn.`;
