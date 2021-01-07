@@ -33,7 +33,7 @@ let updatePositions = (string, object) => {
 }
 
 let checkWinner = (player, object) => {
-  console.log('checkWinner ', player, object)
+  // console.log('checkWinner ', player, object)
   let objKeys = Object.keys(object);
   for(let i = 0; i < objKeys.length; i++){
     if(object[objKeys[i]] === 3){
@@ -44,11 +44,11 @@ let checkWinner = (player, object) => {
   if(playerXO[1] === "X"){
     playerXO = ["Two", "O"];
     document.getElementById('playerTurn').innerHTML = `It's Player ${playerXO[0]}'s turn.`;
-    console.log(positions);
+    // console.log(positions);
   } else {
     playerXO = ["One", "X"];
     document.getElementById('playerTurn').innerHTML = `It's Player ${playerXO[0]}'s turn.`;
-    console.log(positions);
+    // console.log(positions);
   }
 }
 
@@ -203,11 +203,13 @@ document.getElementById('3LC').addEventListener("click", function(){
 
 document.getElementById('reset').addEventListener("click", function(){
   let all = document.getElementsByClassName('board');
+  // console.log(all);
   for(var k = 0; k < all.length; k++){
     all[k].innerHTML = '[&nbsp;&nbsp;]';
   }
   positions.X = {};
   positions.O = {};
+  positions.all = [];
   playerXO = ["One", "X"];
   document.getElementById('playerTurn').innerHTML = `It's Player ${playerXO[0]}'s turn.`;
 })
