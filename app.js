@@ -20,6 +20,8 @@ positions.O = {};
 positions.all = [];
 let playerXO = ["One", "X"];
 let found = false;
+let playerOneScore = 0;
+let playerTwoScore = 0;
 
 let updatePositions = (string, object) => {
   let letters = string.split(",");
@@ -38,6 +40,13 @@ let checkWinner = (player, object) => {
   for(let i = 0; i < objKeys.length; i++){
     if(object[objKeys[i]] === 3){
       document.getElementById('playerTurn').innerHTML = `Player ${playerXO[0]} wins!`;
+      if(playerXO[1] === "X"){
+        playerOneScore +=1;
+        document.getElementById('playerOneScore').innerHTML = `Player 1: ${playerOneScore}`;
+      } else {
+        playerTwoScore +=1;
+        document.getElementById('playerTwoScore').innerHTML = `Player 2: ${playerTwoScore}`;
+      }
       return;
     }
   }
