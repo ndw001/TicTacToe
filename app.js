@@ -223,8 +223,21 @@ document.getElementById('reset').addEventListener("click", function(){
   positions.X = {};
   positions.O = {};
   positions.all = [];
-  playerXO = ["One", "X"];
-  document.getElementById('playerTurn').innerHTML = `It's Player ${playerXO[0]}'s turn.`;
+  if(playerOneScore > playerTwoScore){
+    playerXO = ["Two", "O"];
+    document.getElementById('playerTurn').innerHTML = `It's Player ${playerXO[0]}'s turn.`;
+  } else if(playerTwoScore > playerOneScore){
+    playerXO = ["One", "X"];
+    document.getElementById('playerTurn').innerHTML = `It's Player ${playerXO[0]}'s turn.`;
+  } else {
+    if(Math.random() >= 0.5){
+      playerXO = ["Two", "O"];
+      document.getElementById('playerTurn').innerHTML = `It's Player ${playerXO[0]}'s turn.`;
+    } else {
+      playerXO = ["One", "X"];
+      document.getElementById('playerTurn').innerHTML = `It's Player ${playerXO[0]}'s turn.`;
+    }
+  }
 })
 
 
